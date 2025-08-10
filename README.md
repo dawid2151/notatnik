@@ -1,4 +1,6 @@
 Notanik
+<img width="1626" height="592" alt="obraz" src="https://github.com/user-attachments/assets/43329009-725f-4ff3-94fa-a5a9c9604239" />
+
 
 Aplikacja zbudowana na frameworku yii2, za front end odpowiada bootstrap.
 - Wprowadzone są odpowiednie zabezpieczenia - aby korzystać z aplikacji trzeba się zalogować, dostęp anonimowy jest jedynie dla strony 'O nas'
