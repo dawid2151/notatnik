@@ -39,6 +39,12 @@ class Note
         $this->content = $content;
     }
 
+    private static function save($data)
+    {
+        Yii::$app->session->set('notes', $data);
+    }
+
+
     public static function currentUserId()
     {
         return Yii::$app->user->id ?? 0;
@@ -46,28 +52,33 @@ class Note
 
     public static function all()
     {
-        return self::$_userNotes[self::currentUserId()] ?? [];
-    }
-
-    public static function findOne($id)
-    {
-        $userId = self::currentUserId();
-        return self::$_userNotes[$userId][$id] ?? null;
+        $data = Yii::$app->session->get('notes', []);
+        return $data[self::currentUserId()] ?? [];
     }
 
     public static function add($title, $content)
     {
+        $data = Yii::$app->session->get('notes', []);
         $userId = self::currentUserId();
-        //tablica dla denego usera musi istniec
-        if (!isset(self::$_userNotes[$userId])) {
-            self::$_userNotes[$userId] = [];
+        if (!isset($data[$userId])) 
+        {
+            $data[$userId] = [];
         }
+        $nextId = empty($data[$userId]) ? 1 : (max(array_keys($data[$userId])) + 1);
+        $data[$userId][$nextId] = ['id' => $nextId, 'title' => $title, 'content' => $content];
+        self::save($data);
+    }
 
-        $id = count(self::$_userNotes[$userId]) + 1;
-        self::$_userNotes[$userId][$id] = [
-            'id' => $id,
-            'title' => $title,
-            'content' => $content,
-        ];
+    public static function delete($id)
+    {
+        $data = Yii::$app->session->get('notes', []);
+        $u = self::currentUserId();
+        if (isset($data[$u][$id])) 
+        {
+            unset($data[$u][$id]);
+            Yii::$app->session->set('notes', $data);
+            return true;
+        }
+        return false;
     }
 }

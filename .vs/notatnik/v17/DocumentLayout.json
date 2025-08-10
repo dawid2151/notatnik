@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Programming\\PHP\\notatnik\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Programming\\PHP\\notatnik\\views\\site\\about.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\site\\about.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Programming\\PHP\\notatnik\\views\\site\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\site\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Programming\\PHP\\notatnik\\controllers\\SiteController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:controllers\\SiteController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SiteController.php",
+              "DocumentMoniker": "D:\\Programming\\PHP\\notatnik\\controllers\\SiteController.php",
+              "RelativeDocumentMoniker": "controllers\\SiteController.php",
+              "ToolTip": "D:\\Programming\\PHP\\notatnik\\controllers\\SiteController.php",
+              "RelativeToolTip": "controllers\\SiteController.php",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAUwH4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-08-09T13:55:24.063Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "about.php",
+              "DocumentMoniker": "D:\\Programming\\PHP\\notatnik\\views\\site\\about.php",
+              "RelativeDocumentMoniker": "views\\site\\about.php",
+              "ToolTip": "D:\\Programming\\PHP\\notatnik\\views\\site\\about.php",
+              "RelativeToolTip": "views\\site\\about.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-08-10T11:07:48.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.php",
+              "DocumentMoniker": "D:\\Programming\\PHP\\notatnik\\views\\site\\index.php",
+              "RelativeDocumentMoniker": "views\\site\\index.php",
+              "ToolTip": "D:\\Programming\\PHP\\notatnik\\views\\site\\index.php",
+              "RelativeToolTip": "views\\site\\index.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2025-08-10T11:03:04.943Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"

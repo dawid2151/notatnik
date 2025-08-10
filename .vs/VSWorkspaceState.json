@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\views",
     "\\views\\site"
   ],
-  "SelectedNode": "\\models",
+  "SelectedNode": "\\views\\layouts",
   "PreviewInSolutionExplorer": false
 }

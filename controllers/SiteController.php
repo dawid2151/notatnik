@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Note;
+use app\models\NewNoteForm;
 
 class SiteController extends Controller
 {
@@ -62,8 +63,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $model = new NewNoteForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+        }
+
         return $this->render('index', [
             'notes' => Note::all(),
+            'model' => $model,
         ]);
     }
 
@@ -129,11 +137,9 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionAddNote($title = '', $content = '')
+    public function actionDelete($id)
     {
-        die("sofjoeif");
-
-        Note::add($title, $content);
-        return $this->redirect(['site/index']);
+        Note::delete((int)$id);
+        return $this->goHome();
     }
 }

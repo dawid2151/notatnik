@@ -1,16 +1,15 @@
 <?php
 
-/** @var yii\web\View $this */
-
 use yii\helpers\Html;
 
-$this->title = 'About';
+$this->title = 'O nas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        Aplikacja notatek pozwala w prosty sposób zarządzać zadaniami.
+        Jest narzędziem które pozwoli Ci nie tylko zwiększyć swoją produktywność ale też przejrzystość celów.
     </p>
 </div>

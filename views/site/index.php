@@ -1,8 +1,9 @@
 <?php
 
 /** @var yii\web\View $this */
-use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\bootstrap5\ActiveForm;
+use yii\bootstrap5\Html;
 
 $this->title = 'Uporządkuj swoje zadania';
 ?>
@@ -17,13 +18,21 @@ $this->title = 'Uporządkuj swoje zadania';
       <!-- Left Column: Notes -->
       <div class="col-md-8 mb-8" id="notes-left">
         <?php foreach ($notes as $note): ?>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= Html::encode($note['title']) ?></h5>
-                        <p class="card-text"><?= Html::encode($note['content']) ?></p>
-                    </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><?= Html::encode($note['title']) ?></h5>
+                    <p class="card-text"><?= Html::encode($note['content']) ?></p>
                 </div>
-            <?php endforeach; ?>
+                <?= Html::a('×', ['site/delete', 'id' => $note['id']], [
+                    'class' => 'btn btn-sm btn-danger',
+                    'title' => 'delete',
+                    'aria-label' => 'delete',
+                    'data' => [
+                        'method' => 'post',
+                    ],
+                ]) ?>
+            </div>
+        <?php endforeach; ?>
       </div>
 
       <!-- Center Column: Form -->
@@ -31,15 +40,23 @@ $this->title = 'Uporządkuj swoje zadania';
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Dodaj nową notatkę</h5>
-            <form method="get" action="index.php?r=site%2Flogin">
-              <div class="mb-3">
-                <input type="text" class="form-control" id="note-title" name="title" placeholder="Tytuł" required>
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" id="note-body" name="content" rows="3" placeholder="Treść" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Dodaj</button>
-            </form>
+             <?php $form = ActiveForm::begin([
+                'id' => 'new-note-form',
+                'fieldConfig' => [
+                    'template' => "{input}\n{error}",
+                    'inputOptions' => ['class' => 'mb-3 form-control'],
+                    'errorOptions' => ['class' => 'mb-3 invalid-feedback'],
+                ],
+            ]); ?>
+            <?= $form->field($model, 'title')->textInput(['placeholder' => 'Tytuł']) ?>
+            <?= $form->field($model, 'content')->textArea(['placeholder' => 'Treść']) ?>
+            <div class="form-group">
+                <div>
+                    <?= Html::submitButton('Dodaj', ['class' => 'btn btn-primary w-100', 'name' => 'add-button']) ?>
+                </div>
+            </div>
+            <?php ActiveForm::end(); ?>
+
           </div>
         </div>
       </div>

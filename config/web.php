@@ -55,7 +55,7 @@ $config = [
         */
     ],
     'params' => $params,
-    'name' => 'Notatki coś'
+    'name' => 'Notatki'
 ];
 
 if (YII_ENV_DEV) {
